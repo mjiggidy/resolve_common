@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resolve-common"
+version = "0.1.0"
+description = "Common utilities for Davinci Resolve development"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-only" }
+authors = [
+	{ name = "Michael J. Jordan", email = "michael@glowingpixel.com" }
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["resolvecommon*"]
