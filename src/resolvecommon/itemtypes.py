@@ -20,7 +20,7 @@ class ItemTypes(enum.StrEnum):
 	PHOTO_ALBUM = "Photo Album"
 
 	@classmethod
-	def from_media_pool_item(cls, item) -> typing.Self:
+	def from_media_pool_item(cls, media_pool_item:object) -> typing.Self:
 		"""Return a type for a given Media Pool Item"""
 		
-		return cls(item.GetClipProperty("Type"))
+		return cls(media_pool_item.GetClipProperty("Type"))
