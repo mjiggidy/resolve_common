@@ -16,6 +16,8 @@ class ItemTypes(enum.StrEnum):
 	VFX_CONNECT = "VFX Connect"
 	GENERATOR   = "Generator"
 	FUSION      = "Fusion"
+	FUSION_COMP = "Fusion Composition"
+	FUSION_TITLE= "Fusion Title"
 	REF_COMP    = "Referenced Composition"
 	PHOTO_ALBUM = "Photo Album"
 
