@@ -148,7 +148,7 @@ def version_up_selected_reels(version_part=versioning.VersionParts.PATCH):
 			logging.getLogger(__name__).error("Skipping %s: Expected %s type, got %s", current_item_name, itemtypes.ItemTypes.TIMELINE, current_item_type)
 			continue
 
-		current_timeline = get_timeline_by_name(current_item_name)
+		current_timeline = item.GetTimeline()
 
 		if not current_timeline:
 			
@@ -167,6 +167,8 @@ def version_up_selected_reels(version_part=versioning.VersionParts.PATCH):
 
 def get_timeline_by_name(timeline_name:str) -> object:
 	"""Find a timeline by name"""
+
+	raise DeprecationWarning("Media pool items now have GetTimeline()")
 	
 	# Boy is this dumb
 	
