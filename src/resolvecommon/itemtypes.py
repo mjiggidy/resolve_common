@@ -1,6 +1,7 @@
 import enum, typing
 
 class ItemTypes(enum.StrEnum):
+	"""Media pool item (clip) types"""
 	
 	VIDEO       = "Video"
 	AUDIO       = "Audio"
