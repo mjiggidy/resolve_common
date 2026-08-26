@@ -2,15 +2,21 @@ import enum, typing
 
 class ItemTypes(enum.StrEnum):
 	
-	TIMELINE    = "Timeline"
 	VIDEO       = "Video"
 	AUDIO       = "Audio"
-	COMPOUND    = "Compound"
-	MULTICAM    = "Multicam"
 	VIDEO_AUDIO = "Video + Audio"
-	FUSION      = "Fusion"
 	STILL       = "Still"
+	MULTICAM    = "Multicam"
+	TIMELINE    = "Timeline"
+	COMPOUND    = "Compound"
+	MATTE       = "Matte"
+	REF_CLIP    = "Ref Clip"
+	STEREO      = "Stereo"
+	VFX_CONNECT = "VFX Connect"
 	GENERATOR   = "Generator"
+	FUSION      = "Fusion"
+	REF_COMP    = "Referenced Composition"
+	PHOTO_ALBUM = "Photo Album"
 
 	@classmethod
 	def from_media_pool_item(cls, item) -> typing.Self:
