@@ -10,6 +10,7 @@ class ItemTypes(enum.StrEnum):
 	VIDEO_AUDIO = "Video + Audio"
 	FUSION      = "Fusion"
 	STILL       = "Still"
+	GENERATOR   = "Generator"
 
 	@classmethod
 	def from_media_pool_item(cls, item) -> typing.Self:
