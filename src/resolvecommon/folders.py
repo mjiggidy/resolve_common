@@ -7,7 +7,8 @@ from .itemtypes import ItemTypes
 if typing.TYPE_CHECKING:
 	import DaVinciResolveScript as bmd
 
-def get_folder_from_path(path:PathLike[str], root_folder):
+def get_folder_from_path(path:PathLike[str], root_folder:bmd.Folder) -> bmd.Folder:
+	"""Get a Media Pool Folder object from a given pathlike string"""
 	
 	current_folder = root_folder
 	
@@ -25,10 +26,12 @@ def get_folder_from_path(path:PathLike[str], root_folder):
 	
 	return current_folder
 
-def get_clips_from_folder_by_type(folder:bmd.Folder, clip_types:list[ItemTypes]|None=None, recursive:bool=False, ignore_folder:bmd.Folder|None=None):
+def get_clips_from_folder_by_type(folder:bmd.Folder, clip_types:list[ItemTypes]|None=None, recursive:bool=False, ignore_folder:bmd.Folder|None=None) -> typing.Generator[bmd.MediaPoolItem,None,None]:
 	
-	if ignore_folder and folder == ignore_folder:
-		yield StopIteration
+	if ignore_folder and folder.GetUniqueId() == ignore_folder.GetUniqueId():
+		
+		logging.getLogger(__name__).debug("Hit an ignored folder: %s", folder.GetName())
+		return
 
 	clip_types = clip_types or ItemTypes
 	
