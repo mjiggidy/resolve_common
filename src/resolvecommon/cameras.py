@@ -6,3 +6,4 @@ PAT_CAMERA_REEL_NAMES = {
 	"RED"        : re.compile(r"^(?P<cam_letter>[a-z])(?P<cam_card>[0-9]{3})_C(?P<clip_number>[0-9]{3})_(?P<date>[0-9]{4})(?P<cam_id>[a-z0-9]{2})$", re.I),
 	"DJI Inspire": re.compile(r"^(?P<cam_letter>[a-z])(?P<cam_card>[0-9]{3})C(?P<clip_number>[0-9]{4})_(?P<date>[0-9]{6})_(?P<cam_id>[a-z0-9]{6})$", re.I),
 }
+"""Common camera clip naming formats"""

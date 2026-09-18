@@ -2,10 +2,13 @@
 session.py - Unified DaVinci Resolve API Environment Handler
 Supports both internal Workflow Integration execution and external execution.
 """
+from __future__ import annotations
+import sys, logging, typing
 
-import sys, logging
+if typing.TYPE_CHECKING:
+	import DaVinciResolveScript as dvr_typing
 
-def _get_resolve_session():
+def _get_resolve_session() -> tuple[object, dvr_typing.Resolve, dvr_typing.Fusion]:
 	
 	import __main__
 

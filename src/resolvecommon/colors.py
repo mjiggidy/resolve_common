@@ -1,6 +1,5 @@
 import enum, typing
 
-
 class FlagColors(enum.StrEnum):
 	"""Available color names for flags"""
 
@@ -37,5 +36,6 @@ class FlagColors(enum.StrEnum):
 
 	@classmethod
 	def to_resolve_string(self, flags:list[typing.Self]) -> str:
+		"""Return a string formatted for Resolve setters"""
 
 		return ",".join(f.value for f in flags)

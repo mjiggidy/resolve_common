@@ -27,6 +27,7 @@ def get_folder_from_path(path:PathLike[str], root_folder:bmd.Folder) -> bmd.Fold
 	return current_folder
 
 def get_clips_from_folder_by_type(folder:bmd.Folder, clip_types:list[ItemTypes]|None=None, recursive:bool=False, ignore_folder:bmd.Folder|None=None) -> typing.Generator[bmd.MediaPoolItem,None,None]:
+	"""Yield clips by type from a given media pool folder, recursively"""
 	
 	if ignore_folder and folder.GetUniqueId() == ignore_folder.GetUniqueId():
 		
